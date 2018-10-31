@@ -1,0 +1,4 @@
+node_modules/
+yarn.lock
+gulpfile.js
+yarn-error.log
