@@ -46,6 +46,7 @@ exports.branchAdd = function (value) {
         var json = readJson();
         json.branch.push(value.toString());
         writeJson(json);
+        console.log(`"${value}" added to branch array.`);
     }
 }
 
@@ -60,6 +61,7 @@ exports.branchRemove = function (value) {
         }
         json.branch = duplicate;
         writeJson(json);
+        console.log(`"${value}" removed from branch array.`);
     }
 }
 

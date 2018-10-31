@@ -1,6 +1,6 @@
 {
   "name": "git-pull-push",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Used to pull and push easily by just selecting name of the branch.",
   "main": "src/index.js",
   "scripts": {
