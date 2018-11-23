@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const fs = require('fs-extra');
 const path = require('path');
 
-exports.gitPullPush = function () {
+exports.gitPullPush = function (args, value) {
     var branchRef = shell.exec('git symbolic-ref HEAD', {
         async: false
     }).stdout;
@@ -17,15 +17,27 @@ exports.gitPullPush = function () {
         async: false
     });
 
-    askQuestions().then(function (answer) {
-        shell.exec(`git pull origin ${answer.BRANCH}`, {
+    if (args === 'o') {
+        var json = readJson();
+        shell.exec(`git pull origin ${json.branch[value]}`, {
             async: false
         });
 
         shell.exec(`git push`, {
             async: false
         });
-    })
+    } else {
+        askQuestions().then(function (answer) {
+            shell.exec(`git pull origin ${answer.BRANCH}`, {
+                async: false
+            });
+
+            shell.exec(`git push`, {
+                async: false
+            });
+        })
+    }
+
 }
 
 function askQuestions() {
@@ -48,6 +60,23 @@ exports.branchAdd = function (value) {
         writeJson(json);
         console.log(`"${value}" added to branch array.`);
     }
+}
+
+exports.npmrc = function (value) {
+    if (value === 'gulp') {
+        shell.exec('pnpm install gulp request run-sequence gulp-util', {
+            async: false
+        });
+    } else {
+        var rc = fs.readFileSync(`${value}/.npmrc`).toString();
+        try {
+            rc = rc.replace(rc.match('syncd(.+?)/')[0], 'nexus.com/')
+            fs.writeFileSync(`${value}/.npmrc`, rc);
+        } catch (e) {
+
+        }
+    }
+
 }
 
 exports.branchRemove = function (value) {
