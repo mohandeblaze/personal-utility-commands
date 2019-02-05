@@ -1,7 +1,7 @@
 {
-  "name": "git-pull-push",
+  "name": "my-personal-utility",
   "version": "1.0.4",
-  "description": "Used to pull and push easily by just selecting name of the branch.",
+  "description": "Published in NPM for due to personal needs. Not for public needs",
   "main": "src/index.js",
   "scripts": {
     "test": "node --inspect-brk ./test.js"
@@ -20,7 +20,7 @@
     "git-push"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "fs-extra": "^7.0.0",
     "inquirer": "^6.2.0",

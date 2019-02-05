@@ -70,7 +70,7 @@ exports.npmrc = function (value) {
     } else {
         var rc = fs.readFileSync(`${value}/.npmrc`).toString();
         try {
-            rc = rc.replace(rc.match('syncd(.+?)/')[0], 'nexus.syncfusion.com/')
+            rc = rc.replace(rc.match('syncd(.+?)/')[0], 'nexus.com/')
             fs.writeFileSync(`${value}/.npmrc`, rc);
         } catch (e) {
 
