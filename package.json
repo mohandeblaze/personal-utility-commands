@@ -1,6 +1,6 @@
 {
   "name": "my-personal-utility",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Published in NPM for due to personal needs. Not for public use",
   "main": "src/index.js",
   "scripts": {
