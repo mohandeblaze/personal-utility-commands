@@ -9,19 +9,31 @@ const inquirer = require("inquirer");
 const fs = require('fs-extra');
 const path = require('path');
 
+const prettierrc = `{
+    "singleQuote": true,
+    "semi": true,
+    "printWidth": 115,
+    "tabWidth": 4,
+    "jsxBracketSameLine": true,
+    "jsxSingleQuote": true
+}`;
+
 if (args === 'add') {
     gpp.branchAdd(value);
 } else if (args === 'remove') {
     gpp.branchRemove(value);
 } else if (args === 'o') {
-    gpp.gitMaster(args, value);
+    gpp.gitPullPush(args, value);
 } else if (args === 'rc') {
     gpp.npmrc(`${process.cwd()}`);
 } else if (args === 'pnpm') {
     gpp.npmrc(args);
 } else if (args === '-d') {
     nodeDebug(process.argv[3], process.argv[4]);
-} else {
+} else if (args === 'pretty') {
+    const targetPath = process.cwd();
+    fs.writeFileSync(path.resolve(`${targetPath}/.prettierrc`), prettierrc);
+} else if (args === 'git') {
     gpp.gitPullPush();
 }
 

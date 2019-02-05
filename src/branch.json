@@ -1,6 +1,8 @@
 {
   "branch": [
     "development",
-    "master"
+    "master",
+    "release/16.4.0.1",
+    "hotfix/16.4.0.42_Vol4"
   ]
 }
