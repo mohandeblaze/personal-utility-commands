@@ -1,7 +1,7 @@
 {
   "name": "my-personal-utility",
   "version": "2.0.0",
-  "description": "Published in NPM for due to personal needs. Not for public needs",
+  "description": "Published in NPM for due to personal needs. Not for public use",
   "main": "src/index.js",
   "scripts": {
     "test": "node --inspect-brk ./test.js"
@@ -10,16 +10,11 @@
     "gpp": "./bin/git-pull-push.js"
   },
   "repository": {
-    "url": "https://github.com/mohandeblaze/git-pull-push"
+    "url": "https://github.com/mohandeblaze/personal-utility-commands",
+    "type": "git"
   },
   "preferGlobal": true,
-  "keywords": [
-    "node_modules",
-    "git",
-    "git-pull",
-    "git-push"
-  ],
-  "author": "",
+  "author": "Mohan R",
   "license": "MIT",
   "dependencies": {
     "fs-extra": "^7.0.0",
